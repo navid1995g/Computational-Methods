@@ -21,15 +21,24 @@ Iteration = 10;
 for k = 1:Iteration
     
     x1(k + 1) = (41 + 0.4*x2(k))/0.8
-    x1(k + 1) = relaxation(x1(k + 1),x1(k),lambda)
+    
+    % Relaxation Term (Uncomment)
+    % x1(k + 1) = relaxation(x1(k + 1),x1(k),lambda)
+    
     err1 = error(x1(k + 1),x1(k))
    
     x2(k + 1) = (25 + 0.4*x1(k + 1) + 0.4*x3(k))/0.8
-    x2(k + 1) = relaxation(x2(k + 1),x2(k),lambda)
+    
+    % Relaxation Term (Uncomment)
+    % x2(k + 1) = relaxation(x2(k + 1),x2(k),lambda)
+    
     err2 = error(x2(k + 1),x2(k))
 
     x3(k + 1) = (105 + 0.4*x2(k + 1))/0.8
-    x3(k + 1) = relaxation(x3(k + 1),x3(k),lambda)
+    
+    % Relaxation Term (Uncomment)
+    % x3(k + 1) = relaxation(x3(k + 1),x3(k),lambda)
+    
     err3 = error(x3(k + 1),x3(k))
 
     if error(x1(k + 1),x1(k)) < 5 && error(x2(k + 1),x2(k)) < 5 && error(x3(k + 1),x3(k)) < 5
